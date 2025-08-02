@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-  origin: "https://paisarap-frontend.onrender.com", // ✅ Frontend Render URL
+  origin: "https://paisarap-frontend.onrender.com",
   credentials: true
 }));
 
@@ -25,7 +25,6 @@ mongoose.connect(process.env.MONGO_URI, {
   console.error("MongoDB connection error:", err);
 });
 
-// All Routes
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
